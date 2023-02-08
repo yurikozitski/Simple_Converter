@@ -1,0 +1,192 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, dl, dt, dd,
+ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body, html {
+    font-family: Verdana, Arial, sans-serif;
+    background-color: #f7f7f7;
+    min-height: 600px;
+    min-width: 1000px;
+    height: 100%;
+    width: 100%;
+}
+
+div {
+    height: 100%;
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    min-width: 300px;
+}
+
+.header {
+    background-color: #ded9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #8f8c8c;
+    border-top: 1px solid #8f8c8c;
+    height: 20%;
+    width: 100%;
+    float: left;
+}
+
+    .header h1 {
+        font-size: 24px;
+        font-weight: bold;
+        padding: 30px 30px 30px 10px;
+        clear: both;
+    }
+
+.sidebar {
+    float: left;
+    width: 33%;
+    padding: 0 10px 0 20px;
+    border-right: 1px solid #c9c7c7;
+    height: 70%;
+}
+
+    .sidebar h3 {
+        font-weight: bold;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    .sidebar table tr td {
+        width: 150px;
+        height: 30px;
+        border: solid 1px silver;
+        text-align: left;
+    }
+
+.main {
+    height: 70%;
+    float: left;
+    width: 67%;
+    display: flex;
+    justify-content: center;
+}
+
+    .main .convertionWrapper {
+        width: 500px;
+        height: 100%;
+    }
+
+        .main .convertionWrapper .ConvertFrom_ {
+            width: 200px;
+            height: 50px;
+            float: left;
+            margin-top: 20px;
+        }
+
+            .main .convertionWrapper .ConvertFrom_ select {
+                width: 200px;
+                font-size: 18px;
+            }
+
+            .main .convertionWrapper .ConvertFrom_ label {
+                font-weight: bold;
+            }
+
+        .main .convertionWrapper .ConvertTo_ {
+            width: 200px;
+            height: 50px;
+            float: left;
+            margin-left: 100px;
+            margin-top: 20px;
+        }
+
+            .main .convertionWrapper .ConvertTo_ select {
+                width: 200px;
+                font-size: 18px;
+            }
+
+            .main .convertionWrapper .ConvertTo_ label {
+                font-weight: bold;
+            }
+
+        .main .convertionWrapper .input_ {
+            float: left;
+           /* margin-left: 150px;*/
+            width: 100%;
+            height: 50px;
+        }
+
+            .main .convertionWrapper .input_ label {
+                font-weight: bold;
+            }
+
+            .main .convertionWrapper .input_ input {
+                width: 100%;
+                font-size: 18px;
+            }
+
+        .main .convertionWrapper .submit_ {
+            float: left;
+            margin-left: 50px;
+            margin-top: 20px;
+            width:100px;
+            height: 40px;
+        }
+
+            .main .convertionWrapper .submit_ button {
+                font-size: 18px;
+                font-weight: bold;
+                width: 100px;
+                height: 40px;
+            }
+
+        .main .convertionWrapper .swap {
+            float: right;
+            margin-right: 50px;
+            margin-top: 20px;
+            height: 40px;
+            width: 100px;
+        }
+
+            .main .convertionWrapper .swap button {
+                font-size: 18px;
+                font-weight: bold;
+                width: 100px;
+                height: 40px;
+            }
+
+        .main .convertionWrapper .output_ {
+            float: left;
+            width: 100%;
+            height: 50px;
+            margin-top: 20px;
+        }
+
+            .main .convertionWrapper .output_ label {
+                font-weight: bold;
+            }
+
+            .main .convertionWrapper .output_ input {
+                width: 100%;
+                font-size: 18px;
+            }
+
+.footer {
+    border-top: 1px solid #ccc;
+    font-size: .8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    float: left;
+    clear: both;
+    height: 10%;
+    /*min-height: 20px;*/
+}

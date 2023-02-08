@@ -1,0 +1,96 @@
+﻿@page
+@model IndexModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Converter</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var select1 = document.getElementById("ConvertTo");
+            select1.value = document.cookie.replace(/(?:(?:^|.*;\s*)ConvertTo\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+            var select2 = document.getElementById("ConvertFrom");
+            select2.value = document.cookie.replace(/(?:(?:^|.*;\s*)ConvertFrom\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        });
+    </script>
+    <link rel="stylesheet" href="/css/Index.css" />
+</head>
+<body>
+    <div class="header">
+        <h1>Lenth Converter</h1>
+    </div>
+    <div class="sidebar">
+        <h3>Lenth conversion table</h3>
+        <table>
+            <tr>
+                <td>1 in = 2.54 cm</td>
+                <td>1 mm = 0.039 in</td>
+            </tr>
+            <tr>
+                <td>1 ft = 30.48 cm</td>
+                <td>1 cm = 0.394 in</td>
+            </tr>
+            <tr>
+                <td>1 yd = 0.914 m</td>
+                <td>1 m = 1.094 yd</td>
+            </tr>
+            <tr>
+                <td>1 mi = 1.609 km</td>
+                <td>1 km = 0.621 mi</td>
+            </tr>
+        </table>
+    </div>
+    <div class="main">
+        <div class="convertionWrapper">
+            <form method="post" asp-page-handler="Convert_">
+                <div class="ConvertFrom_">
+                    <label for="ConvertFrom">Convert from:</label> <br />
+                    <select id="ConvertFrom" name="ConvertFrom">
+                        <option value="in">Inches(in)</option>
+                        <option value="ft">Feet(ft)</option>
+                        <option value="yd">Yards(yd)</option>
+                        <option value="mi">Miles(mi)</option>
+                        <option value="mm">Millimetres(mm)</option>
+                        <option value="cm">Centimetres(cm)</option>
+                        <option value="m">Metres(m)</option>
+                        <option value="km" selected>Kilometres(km)</option>
+                    </select>
+                </div>
+                <div class="ConvertTo_">
+                    <label for="ConvertTo">Convert to:</label> <br />
+                    <select id="ConvertTo" name="ConvertTo">
+                        <option value="in">Inches(in)</option>
+                        <option value="ft">Feet(ft)</option>
+                        <option value="yd">Yards(yd)</option>
+                        <option value="mi">Miles(mi)</option>
+                        <option value="mm">Millimetres(mm)</option>
+                        <option value="cm">Centimetres(cm)</option>
+                        <option value="m">Metres(m)</option>
+                        <option value="km">Kilometres(km)</option>
+                    </select>
+                </div>
+                <div class="input_">
+                    <label for="input">Input value:</label> <br />
+                    <input type="text" pattern="^([0-9]+,?[0-9]*)$" name="InputValue" id="input" value="@Model.Input" placeholder="3,14" />
+                </div>
+                <div class="submit_">
+                    <button type="submit">Convert</button>
+                </div>
+            </form>
+            <div class="swap">
+                <form id="swap" method="post" asp-page-handler="Swap">
+                    <button type="submit">Swap</button>
+                </form>
+            </div>
+            <div class="output_">
+                <label for="output">Output value:</label> <br />
+                <input type="text" name="OutputValue" id="output" value="@Model.Result" />
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright © Converter, 2022</p>
+    </div>
+</body>
+</html>
