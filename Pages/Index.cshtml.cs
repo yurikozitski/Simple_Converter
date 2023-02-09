@@ -13,8 +13,8 @@ namespace Simple_Converter.Pages
     {
         public double Input { get; set; }
         public string Result { get; set; }
-        ConvertionClass _convertionClass;
-        public IndexModel(ConvertionClass convertionClass)
+        IConvertion _convertionClass;
+        public IndexModel(IConvertion convertionClass)
         {
             _convertionClass = convertionClass;
         }

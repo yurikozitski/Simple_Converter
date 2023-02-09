@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Simple_Converter.Services
 {
-    public class ConvertionClass
+    public class ConvertionClass: IConvertion
     {
         public string DoConversion(string ConvertFrom, string ConvertTo, double InputValue)
         {
